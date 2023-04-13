@@ -2,6 +2,26 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NameController;
 use App\Http\Controllers\InvokeController;
+use App\Http\Controllers\InternsController;
+use App\Http\Controllers\InternsWithResourceController;
+
+
+    Route::get('/home', [InternsController::class, 'homepage']);
+    
+    Route::get('/create_new_transaction', [InternsWithResourceController::class, 'create']);
+    Route::post('store_new_transaction', [InternsWithResourceController::class, 'store']);
+    Route::get('/edit_new_transaction/{id}', [InternsWithResourceController::class, 'show']);
+    Route::patch('/update_new_transaction/{id}', [InternsWithResourceController::class, 'update']);
+    Route::get('/deactivate_transaction/{id}', [InternsWithResourceController::class, 'deactivate']);
+
+
+
+
+
+
+// ---------------------------------
+
+
 
 // wagpo
     Route::get('/', function () {
